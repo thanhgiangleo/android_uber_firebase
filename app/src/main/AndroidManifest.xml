@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Drivers.DriverAuthActivity" />
+        <activity android:name=".MapActivity" />
+        <activity android:name=".Customers.CustomerAuthActivity"></activity>
     </application>
 
 </manifest>
