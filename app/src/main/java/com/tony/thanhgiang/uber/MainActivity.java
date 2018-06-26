@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.tony.thanhgiang.uber.Customers.CustomerAuthActivity;
 import com.tony.thanhgiang.uber.Drivers.DriverAuthActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, DriverAuthActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        mCustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CustomerAuthActivity.class);
                 startActivity(intent);
                 finish();
             }

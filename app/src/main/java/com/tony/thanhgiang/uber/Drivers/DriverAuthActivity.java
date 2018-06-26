@@ -17,7 +17,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.tony.thanhgiang.uber.MapActivity;
 import com.tony.thanhgiang.uber.R;
 
 public class DriverAuthActivity extends AppCompatActivity {
@@ -39,7 +38,7 @@ public class DriverAuthActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if (user != null) {
-                    Intent intent = new Intent(DriverAuthActivity.this, MapActivity.class);
+                    Intent intent = new Intent(DriverAuthActivity.this, DriverMapActivity.class);
                     startActivity(intent);
                     finish();
                 }
@@ -99,6 +98,8 @@ public class DriverAuthActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        mAuth.removeAuthStateListener(authStateListener);
+        if (authStateListener != null) {
+            mAuth.removeAuthStateListener(authStateListener);
+        }
     }
 }
