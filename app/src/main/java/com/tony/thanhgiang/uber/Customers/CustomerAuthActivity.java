@@ -16,7 +16,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.tony.thanhgiang.uber.Drivers.DriverAuthActivity;
 import com.tony.thanhgiang.uber.MapActivity;
 import com.tony.thanhgiang.uber.R;
 
@@ -60,7 +59,7 @@ public class CustomerAuthActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (!task.isSuccessful()) {
-                            Toast.makeText(CustomerAuthActivity.this, "Sign up error", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CustomerAuthActivity.this, "Sign up error : " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         } else {
                             String user_id = mAuth.getCurrentUser().getUid();
                             DatabaseReference user_db = FirebaseDatabase.getInstance().getReference()
@@ -81,7 +80,7 @@ public class CustomerAuthActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (!task.isSuccessful()) {
-                            Toast.makeText(CustomerAuthActivity.this, "Login error", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CustomerAuthActivity.this, "Login error : " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
