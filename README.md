@@ -1,3 +1,4 @@
-# android_uber_firebase
-Android Project of cloning Uber
-User auth v1 : Cannot signup
+# Android Project of cloning Uber
+## Development timeline
+### User authentication :
+* v1.1 : Full of functions in loginning and signing up
